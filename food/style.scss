@@ -1,0 +1,434 @@
+@import "libs/bootstrap";
+@font-face{
+    font-family: 'NeutrafaceGreek';
+    font-style: normal;
+    font-weight: 100;
+    src: url('font/Neutraface2DispGreekBold.otf') format('opentype');
+    src: url('font/Neutraface2DispGreekBold.woff') format('woff'),
+}
+@font-face{
+    font-family: 'NeutrafaceGreek';
+    font-style: normal;
+    font-weight: normal;
+    src: url('font/Neutraface2Display-Bold.otf') format('opentype');
+    src: url('font/Neutraface2Display-Bold.woff') format('woff'),
+}
+@font-face{
+    font-family: 'NeutrafaceGreek';
+    font-style: normal;
+    font-weight: bold;
+    src: url('font/Neutraface 2 Disp Greek Titl.otf') format('opentype');
+    src: url('font/Neutraface 2 Disp Greek Titl.woff') format('woff'),
+}
+
+body {font: 100 18px NeutrafaceGreek, Helvetica, Arial; padding: 20px;margin: 0;background: url(img/background-min.jpg);}
+a, a:hover{color: #000;text-decoration: none;}
+*,*:before,*:after {box-sizing: border-box;}
+ul{margin: 0;padding: 0;}
+h2, p{margin: 0;}
+
+@mixin xxxs() {
+    @media only screen and (max-width: 360px) {
+        @content;
+    }
+}
+
+@mixin xxs() {
+    @media only screen and (max-width: 550px) {
+        @content;
+    }
+}
+@mixin xxs-min() {
+    @media only screen and (min-width: 551px) {
+        @content;
+    }
+}
+@mixin xs() {
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin xs-min() {
+    @media only screen and (min-width: 769px) {
+        @content;
+    }
+}
+@mixin sm() {
+    @media only screen and (max-width: 991px) {
+        @content;
+    }
+}
+@mixin sm-min() {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+@mixin md() {
+    @media only screen and (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin lg() {
+    @media only screen and (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin xlg() {
+    @media only screen and (max-width: 1600px) {
+        @content;
+    }
+}
+@mixin font($weight, $size){
+    font-weight: $weight;
+    font-size: $size;
+}
+.clearfix{clear:both;}
+.top_block{
+    background: url(img/beetroot.png) no-repeat center/auto 70%, url(img/top-min.jpg) no-repeat 100%/cover;
+    height: 97vh;
+    position: relative;
+    padding-bottom: 50px;
+    @include xs{
+        background: url(img/beetroot.png) no-repeat center/auto 60%, url(img/top-min.jpg) no-repeat 100%/cover;
+        height: 550px;
+    }
+    @include xxs{
+        background: url(img/beetroot.png) no-repeat center/auto 50%, url(img/top-min.jpg) no-repeat 100%/cover;
+        height: 480px;
+    }
+    @include xxxs{
+        background: url(img/top-min.jpg) no-repeat 100%/cover;
+        height: auto;
+    }
+     nav{
+        padding-top: 17px;   
+    }
+    .logo{
+        @include sm{
+            width: 197px;
+            margin: 0 auto 10px;
+            display: block;
+            float: none;
+        }
+        @include xs{
+            width: 184px;
+        }
+    }
+    .top_menu{
+        text-transform: uppercase;
+        float: right;
+        @include sm{
+            float: none;
+            text-align: center;
+        }
+        li{
+            display: inline-block;
+            margin-right: 25px;
+            @include font(normal, 29px);
+            @include xs{
+                margin-right: 10px;
+            }
+            &:last-child{
+                margin-right: 55px;
+                @include sm{
+                    margin-right: 0;
+                }
+            }    
+            &:hover{
+                text-decoration: underline;
+            }
+            @include xxs{
+                font-size: 24px;
+            }
+        }
+
+    } 
+}
+.logo{
+    @include font(bold, 58px);
+    padding: 0 49px;
+    float: left;
+    position: relative;
+    &:before,&:after{
+        content:'';
+        @include size (39px, 7px); 
+        background: #ee9898;
+        position: absolute;
+        bottom: 18px;
+        @include lg{
+            bottom: 12px;
+            font-size: 48px;
+        }
+        @include sm{
+            bottom: 8px;
+            height: 6px;
+            width: 33px;
+        }
+    }
+    &:before{
+        left: 0;
+        @include sm{
+            left: 7px;
+        }
+    }
+    &:after{
+        right: 8px;
+        @include sm{
+            right: 14px;
+        }
+    }
+    @include sm{
+        font-size: 45px;
+    }
+    @include xs{
+        font-size: 38px;
+    }
+
+}
+.arrow_down{
+    margin: 8px auto;
+    background: url(img/arrow.png) no-repeat center/contain;
+    @include size (4%, 33px);
+    position: absolute;
+    bottom: 10px;
+    left: 48.5%;
+    @include sm{
+        width: 5%;
+        left: 47.5%;
+    }
+    @include xxs{
+        width: 7%;
+        left: 46.5%;
+    }
+
+}
+
+.blocks{
+    display: table;
+    height: 100vh;
+    @include sm{
+        display: block;
+        height: auto;
+    }
+    .text-block,.img-block{
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.text-block{
+    text-align: center;
+    @include font(100, 24px);
+    background: url(img/fon.gif);
+    @include xlg{
+        font-size: 22px;
+    }
+    @include xs{
+        font-size: 18px;
+    }
+    .blocksleft &{
+        width: 37%;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .blocksright &{
+        width: 33%;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .blocksleft &, .blocksright &{
+        @include sm{
+            width: 100%;
+            padding: 40px;
+        }
+        @include xs{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    h2{
+        @include font(bold, 68px);
+        position: relative;
+        $bottom-h2:23px;
+        @include xlg{
+            font-size: 60px;
+        }
+        @include lg{
+            font-size: 52px;
+        }
+        @include sm{
+            font-size: 45px;
+            margin-top: 0;
+            $bottom-h2:15px;
+        }
+        @include xs{
+            font-size: 40px;
+        }
+        @include xxxs{
+            font-size: 33px;
+        }
+        margin-bottom: $bottom-h2*2;
+        
+        &:after{
+            content:'';
+            @include size (9%, 6px); 
+            background: #ee9898;
+            position: absolute;
+            bottom: -$bottom-h2 - 2px;
+            left: 45.5%;
+            @include sm{width: 10%;left: 45%;
+            }
+                
+        }
+    }
+    .icon-block{
+        max-width: 100px;
+        margin-bottom: 30px;
+        @include md{
+            margin-bottom: 20px;
+        }
+        @include sm{
+            max-width: 80px;
+            margin-bottom: 5px;
+        }
+    }
+}
+.img-block{
+    width: 100%;
+    -webkit-filter: brightness(110%) opacity(0.9);
+    filter: brightness(110%) opacity(0.9);
+    .blocksleft & {
+        width: 63%;
+        @include sm{
+            width: 100%;
+        }
+    }
+    .blocksright & {
+        width: 67%;
+        @include sm{
+            width: 100%;
+        }
+    }
+    &.our-img{
+        background: url(img/photo/our.png) no-repeat center/cover;
+    }
+    &.fresh-img{
+        background: url(img/photo/fresh.png) no-repeat center/cover;
+    }
+    &.local-img{
+        background: url(img/photo/local.png) no-repeat center/cover;
+    }
+    &.fish-img{
+        background: url(img/photo/fish.png) no-repeat center/cover;
+    }
+}
+
+.ending{
+    background: url(img/fon.gif);
+    padding: 90px 70px 70px;
+    @include xs{
+        text-align: center;
+        padding: 40px;
+    }
+    .logo{
+        display: inline-block;
+        margin-bottom: 80px;
+        float: none;
+        @include sm{margin-bottom: 25px;}    
+    } 
+    .adress, .social{
+        width: 50%;
+        margin-bottom: 10px;
+        @include xs{width: 100%;}
+    }
+    .adress{
+        float: left;
+        line-height: 1;
+    }
+    .social{
+        float: right;
+        text-align: right;
+        @include xs{float: none;text-align: center;}
+        a{
+            display: inline-block;
+            margin-left: 10px;
+            transition: 0.5s;
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+        .tweet{
+            @include size (32px, 27px);
+            background: url(img/tweet.png) no-repeat center/contain;
+        }
+        .fb{
+            @include size (13px, 28px);
+            background: url(img/fb.png) no-repeat center/contain;
+        }
+        .insta{
+            @include size (27px, 26px);
+            background: url(img/inst.png) no-repeat center/contain;
+        }
+        .google{
+            @include size (29px, 28px);
+            background: url(img/google.png) no-repeat center/contain;
+        }
+    }
+}
+
+/*---float menu---*/
+
+.menu-checkbox {
+  display: none;
+  &:checked + .menu {
+      transform: translate3d(0, 0, 0);
+    }
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 240px;
+    height: 100%;
+    transform: translate3d(-240px, 0, 0);
+    transition: transform 0.35s;
+    label.menu-toggle {
+        position: absolute;
+        right: -60px;
+        width: 60px;
+        height: 60px;
+        line-height: 0px;
+        display: block;
+        padding: 0;
+        text-indent: -9999px;
+        background: #fff url(img/menu.png) 50% 50%/25px 25px no-repeat;
+        cursor: pointer;
+        :focus {
+            outline: none;
+        }
+    }
+    ul li{
+        &:nth-child(1) a:hover {
+          color: #9dd820;
+        }
+        &:nth-child(2) a:hover {
+          color: #ea2767;
+        }
+        &:nth-child(3) a:hover {
+          color: #fed918;
+        }
+        &:nth-child(4) a:hover {
+          color: #ec331f;
+        }
+        a {
+        display: block;
+        text-align: center;
+        padding: 0 20px;
+        line-height: 60px;
+        text-decoration: none;
+        color: #000;
+        text-transform: uppercase;
+    }
+    } 
+}
+
