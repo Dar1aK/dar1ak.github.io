@@ -14,7 +14,8 @@ h1,h2{font-weight: bold;padding: 20px 0;}
 
 .all{}
 .all .container{background: #fff;}
-.pages{margin-top: 14%;}
+a{color: #aaa;font-size: 23px;}
+.pages{margin-top: 10%;}
 .page{float:left;width: 48%;position: relative;}
 .page:before{content: "";text-align: center;line-height: 0;display: inline-block;color: #000;font-weight: bold;font-size: 20px;position: absolute;
 bottom: 0; width: 100%;background: rgba(204, 204, 204, 0.76);transition: 0.5s;}
