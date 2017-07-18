@@ -338,6 +338,7 @@ h1, h2 { font-weight: bold; }
 .footer .rights span { width: 32%; display: inline-block; vertical-align: middle; }
 .footer .rights span:nth-child(2) { text-align: center; }
 .footer .rights span:nth-child(3) { text-align: right; float: right; }
+@media only screen and (max-width: 768px) { .footer .rights span:nth-child(3) { text-align: center; } }
 .footer .rights span:nth-child(3) img { margin-left: 15px; max-width: 21px; max-height: 15px; }
 @media only screen and (max-width: 550px) { .footer .rights span:nth-child(3).social { text-align: center; } }
 @media only screen and (max-width: 768px) { .footer .rights span { width: 100%; display: block; text-align: center; padding-top: 15px; } }
