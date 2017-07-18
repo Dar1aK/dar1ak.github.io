@@ -12,7 +12,7 @@ a { color: #aaa; font-size: 23px; }
 
 .all { display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
 
-.title { position: absolute; top: 10%; width: 85%; }
+.title { width: 85%; margin-bottom: 40px; margin-top: -40px; }
 
 .pages { display: flex; justify-content: space-between; width: 85%; }
 .pages .page { width: 48%; position: relative; }
