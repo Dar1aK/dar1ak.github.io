@@ -205,6 +205,9 @@ h2{
             @include sm{
                 width: 10%;left: 45%;
             }
+            @include xs{
+                width: 18%;left: 41%;
+            }
                 
         }
     }
