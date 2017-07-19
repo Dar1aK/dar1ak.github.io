@@ -1,90 +1,36 @@
 @import "libs/bootstrap";
-@font-face{
-    font-family: 'NeutrafaceGreek';
-    font-style: normal;
-    font-weight: 100;
-    src: url('font/Neutraface2DispGreekBold.otf') format('opentype');
-    src: url('font/Neutraface2DispGreekBold.woff') format('woff'),
-}
-@font-face{
-    font-family: 'NeutrafaceGreek';
-    font-style: normal;
-    font-weight: normal;
-    src: url('font/Neutraface2Display-Bold.otf') format('opentype');
-    src: url('font/Neutraface2Display-Bold.woff') format('woff'),
-}
-@font-face{
-    font-family: 'NeutrafaceGreek';
-    font-style: normal;
-    font-weight: bold;
-    src: url('font/Neutraface 2 Disp Greek Titl.otf') format('opentype');
-    src: url('font/Neutraface 2 Disp Greek Titl.woff') format('woff'),
-}
-
+@import "font/fonts";
+@import "libs/mixins";
 body {font: 100 18px NeutrafaceGreek, Helvetica, Arial; padding: 20px;margin: 0;background: url(img/background-min.jpg);}
 a, a:hover{color: #000;text-decoration: none;}
 *,*:before,*:after {box-sizing: border-box;}
 ul{margin: 0;padding: 0;}
 h2, p{margin: 0;}
-
-@mixin xxxs() {
-    @media only screen and (max-width: 360px) {
-        @content;
+h2{
+    @include font(bold, 68px);
+    display: block;
+    @include xlg{
+        font-size: 60px;
+    }
+    @include lg{
+        font-size: 52px;
+    }
+    @include md{
+        font-size: 48px;
+    }
+    @include sm{
+        font-size: 45px;
+    }
+    @include xs{
+        font-size: 40px;
+    }
+    @include xxxs{
+        font-size: 33px;
     }
 }
-
-@mixin xxs() {
-    @media only screen and (max-width: 550px) {
-        @content;
-    }
-}
-@mixin xxs-min() {
-    @media only screen and (min-width: 551px) {
-        @content;
-    }
-}
-@mixin xs() {
-    @media only screen and (max-width: 768px) {
-        @content;
-    }
-}
-@mixin xs-min() {
-    @media only screen and (min-width: 769px) {
-        @content;
-    }
-}
-@mixin sm() {
-    @media only screen and (max-width: 991px) {
-        @content;
-    }
-}
-@mixin sm-min() {
-    @media only screen and (min-width: 992px) {
-        @content;
-    }
-}
-@mixin md() {
-    @media only screen and (max-width: 1200px) {
-        @content;
-    }
-}
-@mixin lg() {
-    @media only screen and (max-width: 1400px) {
-        @content;
-    }
-}
-@mixin xlg() {
-    @media only screen and (max-width: 1600px) {
-        @content;
-    }
-}
-@mixin font($weight, $size){
-    font-weight: $weight;
-    font-size: $size;
-}
-.clearfix{clear:both;}
 .top_block{
     background: url(img/beetroot.png) no-repeat center/auto 70%, url(img/top-min.jpg) no-repeat 100%/cover;
+    display: flex;
     height: 97vh;
     position: relative;
     padding-bottom: 50px;
@@ -101,30 +47,26 @@ h2, p{margin: 0;}
         height: auto;
     }
      nav{
-        padding-top: 17px;   
-    }
-    .logo{
+        padding-top: 17px;
+        display: flex;   
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
         @include sm{
-            width: 197px;
-            margin: 0 auto 10px;
-            display: block;
-            float: none;
-        }
-        @include xs{
-            width: 184px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
         }
     }
     .top_menu{
         text-transform: uppercase;
-        float: right;
         @include sm{
-            float: none;
             text-align: center;
         }
         li{
             display: inline-block;
             margin-right: 25px;
-            @include font(normal, 29px);
+            @include font(normal, 27px);
             @include xs{
                 margin-right: 10px;
             }
@@ -142,12 +84,27 @@ h2, p{margin: 0;}
             }
         }
 
-    } 
+    }
+    .arrow_down{
+        margin: 8px auto;
+        background: url(img/arrow.png) no-repeat center/contain;
+        @include size (4%, 33px);
+        position: absolute;
+        bottom: 10px;
+        left: 48.5%;
+        @include sm{
+            width: 5%;
+            left: 47.5%;
+        }
+        @include xxs{
+            width: 7%;
+            left: 46.5%;
+        }
+    }
 }
 .logo{
     @include font(bold, 58px);
     padding: 0 49px;
-    float: left;
     position: relative;
     &:before,&:after{
         content:'';
@@ -183,40 +140,23 @@ h2, p{margin: 0;}
     @include xs{
         font-size: 38px;
     }
-
 }
-.arrow_down{
-    margin: 8px auto;
-    background: url(img/arrow.png) no-repeat center/contain;
-    @include size (4%, 33px);
-    position: absolute;
-    bottom: 10px;
-    left: 48.5%;
-    @include sm{
-        width: 5%;
-        left: 47.5%;
-    }
-    @include xxs{
-        width: 7%;
-        left: 46.5%;
-    }
-
-}
-
 .blocks{
-    display: table;
+    display: flex;
     height: 100vh;
     @include sm{
         display: block;
         height: auto;
     }
     .text-block,.img-block{
-        display: table-cell;
-        vertical-align: middle;
+        display: flex;
     }
 }
 .text-block{
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    flex-direction: column;
     @include font(100, 24px);
     background: url(img/fon.gif);
     @include xlg{
@@ -237,6 +177,7 @@ h2, p{margin: 0;}
     }
     .blocksleft &, .blocksright &{
         @include sm{
+            flex-direction: column;
             width: 100%;
             padding: 40px;
         }
@@ -246,25 +187,11 @@ h2, p{margin: 0;}
         }
     }
     h2{
-        @include font(bold, 68px);
         position: relative;
         $bottom-h2:23px;
-        @include xlg{
-            font-size: 60px;
-        }
-        @include lg{
-            font-size: 52px;
-        }
         @include sm{
-            font-size: 45px;
             margin-top: 0;
             $bottom-h2:15px;
-        }
-        @include xs{
-            font-size: 40px;
-        }
-        @include xxxs{
-            font-size: 33px;
         }
         margin-bottom: $bottom-h2*2;
         
@@ -275,7 +202,8 @@ h2, p{margin: 0;}
             position: absolute;
             bottom: -$bottom-h2 - 2px;
             left: 45.5%;
-            @include sm{width: 10%;left: 45%;
+            @include sm{
+                width: 10%;left: 45%;
             }
                 
         }
@@ -325,29 +253,30 @@ h2, p{margin: 0;}
 .ending{
     background: url(img/fon.gif);
     padding: 90px 70px 70px;
-    @include xs{
+    @include sm{
         text-align: center;
         padding: 40px;
     }
     .logo{
         display: inline-block;
         margin-bottom: 80px;
-        float: none;
         @include sm{margin-bottom: 25px;}    
     } 
-    .adress, .social{
-        width: 50%;
-        margin-bottom: 10px;
-        @include xs{width: 100%;}
+    .bottom{
+        display: flex;
+        align-self: stretch;
+        justify-content: space-between;
+        @include sm{flex-direction: column;}
     }
-    .adress{
-        float: left;
+    .adress, .social{
         line-height: 1;
     }
+    p:nth-child(2n){
+        margin-bottom: 10px;
+    }
     .social{
-        float: right;
-        text-align: right;
-        @include xs{float: none;text-align: center;}
+        align-self: flex-end;
+        @include sm{align-self: center;}
         a{
             display: inline-block;
             margin-left: 10px;
@@ -376,7 +305,6 @@ h2, p{margin: 0;}
 }
 
 /*---float menu---*/
-
 .menu-checkbox {
   display: none;
   &:checked + .menu {
@@ -425,7 +353,6 @@ h2, p{margin: 0;}
         text-align: center;
         padding: 0 20px;
         line-height: 60px;
-        text-decoration: none;
         color: #000;
         text-transform: uppercase;
     }
