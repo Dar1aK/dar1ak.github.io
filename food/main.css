@@ -81,8 +81,7 @@ h2 { font-weight: bold; font-size: 68px; display: block; }
 
 .top_block { background: url(img/beetroot.png) no-repeat center/auto 70%, url(img/top-min.jpg) no-repeat 100%/cover; display: flex; height: 97vh; position: relative; padding-bottom: 50px; }
 @media only screen and (max-width: 768px) { .top_block { background: url(img/beetroot.png) no-repeat center/auto 60%, url(img/top-min.jpg) no-repeat 100%/cover; height: 550px; } }
-@media only screen and (max-width: 550px) { .top_block { background: url(img/beetroot.png) no-repeat center/auto 50%, url(img/top-min.jpg) no-repeat 100%/cover; height: 480px; } }
-@media only screen and (max-width: 360px) { .top_block { background: url(img/top-min.jpg) no-repeat 100%/cover; height: auto; } }
+@media only screen and (max-width: 550px) { .top_block { background: url(img/top-min.jpg) no-repeat 100%/cover; height: auto; } }
 .top_block nav { padding-top: 17px; display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
 @media only screen and (max-width: 991px) { .top_block nav { flex-direction: column; justify-content: flex-start; align-items: center; } }
 .top_block .top_menu { text-transform: uppercase; }
