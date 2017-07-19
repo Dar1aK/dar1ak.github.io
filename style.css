@@ -1,23 +1,25 @@
-body{font: 16px/1 'Roboto Slab', serif;}
-*,*:before,*:after {box-sizing: border-box;padding-top: 0; margin: 0;}
-a, a:hover{text-decoration: none;}
-ul, li{margin: 0;padding: 0;}
-h1,h2, p{margin: 0;}
-h1,h2{font-weight: bold;padding: 20px 0;}
-.container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
-.container:before, .container:after { content: " "; display: table; }
-.container:after { clear: both; }
-@media (min-width: 768px) { .container { width: 750px; } }
-@media (min-width: 992px) { .container { width: 970px; } }
-@media (min-width: 1200px) { .container { width: 1170px; } }
-@media (min-width: 1600px) { .container { width: 1300px; } }
+html { height: 100%; }
 
-.all{}
-.all .container{background: #fff;}
-.pages{margin-top: 10%;}
-.page{float:left;width: 48%;position: relative;}
-.page:before{content: "";text-align: center;line-height: 0;display: inline-block;color: #000;font-weight: bold;font-size: 20px;position: absolute;
-bottom: 0; width: 100%;background: rgba(204, 204, 204, 0.76);transition: 0.5s;}
-.page:hover:before{content: "SCSS, JQuery";padding: 48px;}
-.page:nth-child(2n){margin-left: 3%;}
-.page img{width: 100%;}
+body { font: 16px/1 'Roboto Slab', serif; background: #fff; }
+
+*, *:before, *:after { box-sizing: border-box; padding-top: 0; margin: 0; }
+
+h1, h2, p { margin: 0; }
+
+h1, h2 { font-weight: bold; padding: 20px 0; }
+
+a { color: #aaa; font-size: 23px; }
+
+.all { display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
+
+.title { width: 85%; margin-bottom: 40px; margin-top: -40px; }
+
+.pages { display: flex; justify-content: space-between; width: 85%; }
+.pages .page { width: 48%; position: relative; }
+.pages .page:before { content: ""; text-align: center; line-height: 0; display: inline-block; color: #000; font-weight: bold; font-size: 20px; position: absolute; bottom: 0; width: 100%; background: rgba(204, 204, 204, 0.76); transition: 0.5s; }
+.pages .page:hover:before { padding: 48px; }
+.pages .page[name="sport"]:hover:before { content: "SCSS, JQuery"; }
+.pages .page[name="food"]:hover:before { content: "SCSS, JQuery"; }
+.pages .page img { width: 100%; }
+
+/*# sourceMappingURL=main.css.map */

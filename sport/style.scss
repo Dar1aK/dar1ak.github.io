@@ -908,6 +908,9 @@ $background-light: #613131;
             &:nth-child(3){
                 text-align: right;
                 float: right;
+                @include xs{
+                	text-align: center;
+                }
                 img{
                     margin-left: 15px;
                     max-width: 21px;
