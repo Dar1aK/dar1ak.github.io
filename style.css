@@ -19,7 +19,7 @@ a { color: #aaa; font-size: 23px; }
 .pages .page:before { content: ""; text-align: center; line-height: 0; display: inline-block; color: #000; font-weight: bold; font-size: 20px; position: absolute; bottom: 0; width: 100%; background: rgba(204, 204, 204, 0.76); transition: 0.5s; }
 .pages .page:hover:before { padding: 48px; }
 .pages .page[name="sport"]:hover:before { content: "SCSS, JQuery"; }
-.pages .page[name="food"]:hover:before { content: "SCSS, JQuery"; }
+.pages .page[name="food"]:hover:before { content: "flexbox, SCSS, JQuery"; }
 .pages .page img { width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
