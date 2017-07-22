@@ -1,0 +1,68 @@
+html{height: 100%;}
+body{
+	font: 16px/1 'Roboto Slab', serif;
+	background: #fff;
+}
+*,*:before,*:after {box-sizing: border-box;padding-top: 0; margin: 0;}
+h1,h2, p{margin: 0;}
+h1,h2{font-weight: bold;padding: 20px 0;}
+
+$width: 85%;
+a{
+	color: #aaa;
+	font-size: 23px;
+}
+.all{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+    flex-direction: column;
+}
+.title{
+	top: 10%;
+	width: $width;
+	margin-bottom: 20px;
+}
+.pages{
+	display: flex;
+    justify-content: space-between;
+    width: $width;
+    flex-wrap: wrap;
+    .page{
+		width: 48%;
+		position: relative;
+		margin-bottom: 20px;
+		&:before{
+			content: "";
+			text-align: center;
+			line-height: 0;
+			display: inline-block;
+			color: #000;
+			font-weight: bold;
+			font-size: 20px;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background: rgba(204, 204, 204, 0.76);
+			transition: 0.5s;
+		}
+		&:hover:before{
+			padding: 48px;
+		}
+		&[name="sport"]:hover:before{
+			content: "SCSS, JQuery";
+		}
+		&[name="food"]:hover:before{
+			content: "flex, SCSS, JQuery";
+		}
+		&[name="flex-fun"]:hover:before{
+			content: "flex, SCSS";
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
