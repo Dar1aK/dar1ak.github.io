@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import "mixins";
+@import "grid";
+body{
+	margin: 0;
+	padding-top: 0;
+	height: 100%;
+	font: 13px 'Roboto Condensed', sans-serif;
+}
+*{
+	box-sizing: border-box;
+	-webkit-transition: 0.5s;
+     -moz-transition: 0.5s;
+     -o-transition: 0.5s;
+     transition: 0.5s;
+}
+a{
+	display: block;
+}
+a, a:hover, a:focus{text-decoration: none; color: #000}
+p,ul,li,h1,h2,h3,h4,h5{margin: 0;padding: 0;}
+li{
+	list-style: none;
+}
+h2{
+	font-size: 44px;
+	@include xlg{
+		font-size: 36px;
+	}
+	@include lg{
+		font-size: 30px;
+	}
+	@include sm{
+		font-size: 25px;
+	}
+	@include xxxs{
+		font-size: 17px;
+	}
+}
+h4{
+	margin-bottom: 10px;
+	@include font(normal, 24px);
+	@include lg{
+		font-size: 20px;
+	}
+	@include md{
+		font-size: 17px;
+		margin-bottom: 0;
+	}
+	@include xs{
+		font-size: 14px;
+	}
+}
+$color1:#77cfc3;
+$color2:#ecb330;
+$line: no-repeat url(img/line.png) center/100% 100%;
+
+.logo{
+	display: inline-block;
+	@include sm{
+		float: left;
+    	margin-right: 10px;
+	}
+}
+.logo_name{
+	font-size: 22px;
+	@include sm{
+		font-size: 18px;
+	}
+}
+.product{
+	text-transform: uppercase;
+	display: flex;
+	padding: 40px;
+	overflow: hidden;
+	@include lg{
+		padding: 20px;
+	}
+	@include md{
+		font-size: 11px;
+	}
+	&:hover{
+		-webkit-filter: brightness(105%);
+		filter: brightness(105%);
+		.view{
+			&:before{
+				margin-left: -23px;
+			}
+		}
+	}
+	&.column{
+		flex-direction: column;
+		.ballast{
+			width: 100%;
+    		height: 80%;
+    		@include md{
+				height: 70%;
+			}
+		}
+		.product_content{
+			flex-direction: row;
+			align-items: center;
+			@include xs{
+					flex-direction: column;
+				}
+			.view{
+				@include lg{
+					@include xs-min{
+						align-self: center;
+					}
+				}
+			}
+		}
+	}
+	&_content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+    	.about p{
+    		@include xs{
+    			display: none;
+    		}
+    	}
+		.view{
+			position: relative;
+			margin-left: 30px;
+			margin-top: 10px;
+			font-size: 17px;
+			@include lg{
+				margin-bottom: 10px;
+			}
+			@include md{
+				font-size: 13px;
+				}
+			@include xs{
+    			margin-top: 10px;
+    		}
+			&:before{
+				content: "";
+				position: absolute;
+				width: 25px;
+				height: 20px;
+				background: no-repeat url(img/arrow.png);
+				margin-left: -33px;
+				transition: .5s;
+			}
+		}
+		.like{
+			color: #ff8784;
+			position: relative;
+			align-self: center;
+			margin-top: 30px;
+			font-size: 12px;
+			&:before{
+				content: "";
+				position: absolute;
+				width: 24px;
+				height: 22px;
+				background: no-repeat url(img/like.png);
+				transition: 0.5s;
+				margin-top: -27px;
+				margin-left: 2px;
+			}
+			&:hover:before{
+				background: no-repeat url(img/like-pink.png);
+			}
+		}
+		span{
+			font-weight: bold;
+		}
+		p{
+			line-height: 1;
+		}
+	}
+}
+.ballast{
+}
+/*---textblock---*/
+.textblock{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    @include xs{
+		padding: 20px;
+	}
+    &_up{
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: flex-end;
+	    @include md{
+			font-size: 11px;
+		}
+	    ul{
+	    	li{
+		    	position: relative;
+		    	&:before{
+		    		content: "";
+					position: absolute;
+					width: 23px;
+					height: 15px;
+					background: no-repeat url(img/arrow-white.png) center/contain;
+					margin-left: -40px;
+					transition: .4s;
+					opacity: 0;
+					@include md{
+						width: 16px;
+    					height: 11px;
+					}
+		    	}
+		    	&:hover{
+		    		&:before{
+		    			opacity: 1;
+		    			margin-left: -26px;
+		    		}
+		    	}
+		    	a{
+		    		color: #fff;
+		    		&:hover{
+		    			color: #000;
+		    		}
+		    	}
+		    }
+	    }
+    }
+    &_down{
+	    height: 50%;
+	    display: flex;
+    	justify-content: flex-end;
+    	font-weight: normal;
+    	@include md{
+    		align-items: center;
+    	}
+    }
+}
+/*---rows---*/
+.row1{
+	&_bl1{
+		background: #eaeae2 no-repeat url(img/top.png) right/cover;
+		position: relative;
+		@include lg{
+			background-size: 100% auto;
+		}
+		@include sm{
+				background: #eaeae2;
+		}
+		.top1{
+			position: absolute;
+			width: 45%;
+			left: 0;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    @include sm{
+				width: 67%;
+			}
+		}
+		img{
+			@include sm{
+				width: 130px;
+			}
+			@include xs{
+				width: 120px;
+			}
+			@include xxs{
+				width: 90px;
+			}
+		}
+	}
+	&_bl2{
+		background: $color1 $line;
+		display: flex;
+		flex-direction: column;
+    	justify-content: flex-start;
+    	align-items: center;
+    	position: relative;
+    	overflow: hidden;
+    	color: #fff;
+		@include xs{
+			background: $color1;
+		}
+		.textblock_up{
+			height: 33%;
+			flex-direction: row;
+		    align-self: flex-start;
+		    flex-direction: column;
+		    justify-content: flex-end;
+		}
+		.textblock_down{
+			height: 33%;
+		    display: flex;
+		    justify-content: flex-end;
+		    font-weight: normal;
+		    flex-direction: column;
+		    align-items: flex-start;
+		    @include xs{
+		    	align-self: flex-start;
+		    }
+		}
+	}
+	&_bl1, &_bl2{
+		padding: 40px;
+		@include xxs{
+			padding: 20px;
+		}
+	}
+}
+.row2{
+	@include sm{
+	}
+	&_bl1{
+		@include sm{
+		}
+		&_row1{
+			&_bl1{
+				background: $color2 $line;
+				justify-content: flex-end;
+				.textblock_up{
+					align-items: center;
+					height: 50%;
+					ul{
+	    				width: 100px;
+	    				margin-left: -50px;
+	    				@include xs{
+							margin: 0;
+							width: auto;
+						}
+	    			}
+				}
+				@include xs{
+					background: $color2;
+				}
+			}
+			&_bl2{
+				background: #fdfdfd no-repeat url(img/fondue.png) right/auto 100%;
+				@extend .product;
+				.view{
+					height: 70px;
+				}
+				padding: 80px 90px;
+				@include xlg{
+					padding: 70px 60px;
+				}
+				@include lg{
+					padding: 30px;
+				}
+				.about p{
+		    		@include xs{
+		    			@include xxs-min{
+		    				display: block;
+		    			}
+		    		}
+		    	}
+			}
+		}
+		&_row2{
+			&_bl1{
+				background: #637581 no-repeat url(img/louis.png) center/auto 100%;
+				@extend .product;
+				.product_content{
+					color: #fff;
+					height: 50%;
+				}
+				.like:before{
+					background: no-repeat url(img/like-white.png);
+				}
+				@include sm{
+					background-position: center bottom;
+					background-size: cover;
+				}
+			}
+			&_bl2{
+				background: #eaeaea no-repeat url(img/395.png) center/cover;
+				@extend .product;
+				justify-content: flex-end;
+				align-items: flex-start;
+				@include lg-min{
+					padding: 90px 70px;
+				}
+				@include xs{
+					background-size: 130%;
+					background-position: center bottom;
+				}
+				.product_content {
+				    flex-direction: row;
+				    justify-content: space-between;
+				    width: 60%;
+				    align-items: center;
+				    @include sm{
+				    	align-items: flex-start;
+				    	height: 50%;
+				        flex-direction: column;
+					}
+					@include xs{
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+	&_bl2{
+		@include sm{
+		}
+		&_row1{
+			background: #dfe0da no-repeat url(img/pot.png) right/auto 80%;
+			@extend .product;
+			@include sm{
+				flex-direction: column;
+				background-position: bottom;
+				background-size: 80%;
+				.product_content{
+					justify-content: flex-start;
+				}
+			}
+			@include xs{
+				background-size: 100%;
+			}
+		}
+		&_row2{
+			background: #f7f8f3 no-repeat url(img/tabano.png) center top/contain;
+			@extend .product,.product.column;
+			@include sm{
+				.ballast{
+					height: 50%;
+				}
+			}
+			@include xs{
+				.product_content{
+					align-items: flex-start;
+				}
+			}
+		}
+		&_row3{
+			background: #fff no-repeat url(img/fiji.png) left/auto 90%;
+			@extend .product;
+			.ballast {
+			    width: 55%;
+			}
+			@include lg{
+				@include md-min{
+					.ballast {
+					    width: 65%;
+					}
+				}
+			}
+			@include md{
+				background-size: contain;
+			}
+			@include sm{
+				flex-direction: column;
+				background-position: center bottom;
+				background-size: auto 60%;
+				@include xs{
+					background-size: contain;
+				}
+				.product_content{
+					justify-content: flex-start;
+				}
+			}
+		}
+	}
+}
+.row3{
+	&_bl1{
+		@include xs{
+		}
+		&_row1{
+			background: #fff no-repeat url(img/sesann.png) top/56%;
+			@extend .product,.product.column;
+			padding: 30px;
+			.product_content{
+				flex-direction: row;
+			    align-items: center;
+			    width: 60%;
+			    margin: 0 auto;
+			}
+			@include md{
+				padding: 20px;
+			}
+			@include sm{
+				padding: 10px;
+			}
+		}
+		&_row2{
+			background: #cecece no-repeat url(img/alessi.png) left center/50% auto;
+			@extend .product;			
+			justify-content: flex-end;
+			.product_content{
+				width: 50%;
+			}
+			@include xs{
+				background-size: auto 100%;
+			}
+		}
+	}
+	&_bl2{
+		background: $color2 no-repeat url(img/line.png) left/auto 100%;
+		display: flex;
+    	flex-direction: column;
+    	padding: 10px 50px;
+    	p{
+    		margin-bottom: 5px;
+    		color: #000;
+    	}
+    	@include sm-min{
+    		padding: 50px 90px;
+    	}
+    	@include xs{
+    		background: $color2;
+    	}
+
+	}
+}
+
+@import "menu";
