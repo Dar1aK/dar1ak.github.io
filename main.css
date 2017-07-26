@@ -10,7 +10,7 @@ h1, h2 { font-weight: bold; padding: 20px 0; }
 
 a { color: #aaa; font-size: 23px; }
 
-.all { display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
+.all { display: flex; justify-content: center; align-items: center; flex-direction: column; }
 
 .title { top: 10%; width: 85%; margin-bottom: 20px; }
 
