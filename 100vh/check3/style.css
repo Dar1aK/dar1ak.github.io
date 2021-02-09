@@ -1,0 +1,39 @@
+body {
+	margin: 0;
+    padding: 0;
+	font: 16px/1.4 Arial;
+}
+h2 {
+	margin: 0;
+    padding: 0;
+}
+header {
+	height: 70px;
+	background: #00bcd4;
+}
+footer {
+	background: #ff9800;
+}
+
+.banner {
+	width: 100%;
+	height: calc(100vh - 70px);
+	min-height: calc(320px - 70px);
+	background: #aaa;
+	position: relative; /*for visualization only*/
+}
+.banner:after {
+	content: "END of block";
+	position: absolute; /*for visualization only*/
+    bottom: 0;
+    right: 0;
+    font: bold 30px Arial;
+}
+
+/* Avoid Chrome to see Safari hack */
+@supports (-webkit-touch-callout: none) {
+  .banner {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}

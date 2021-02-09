@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check 2</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<header>
+		<h2>Это версия с фиксом for safari only</h2>
+	</header>
+<div class="banner">
+	<h2>
+		Это блок с баннером
+	</h2>
+</div>
+
+<footer>
+	<h2>Это следующий блок, <br />его не должно быть видно при заходе на страницу</h2>
+</footer>
+
+<script type="text/javascript">
+	document.querySelector('header').innerHTML+=window.navigator.userAgent;
+</script>
+</body>
+</html>
