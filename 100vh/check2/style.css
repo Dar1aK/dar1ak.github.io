@@ -5,6 +5,7 @@ body {
 	margin: 0;
     padding: 0;
 	font: 16px/1.4 Arial;
+	min-height: -webkit-fill-available;
 }
 h2 {
 	margin: 0;
@@ -24,7 +25,6 @@ footer {
 	min-height: calc(320px - 70px);
 	background: #aaa;
 	position: relative; /*for visualization only*/
-	min-height: -webkit-fill-available;
 }
 .banner:after {
 	content: "END of block";
